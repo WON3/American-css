@@ -1,0 +1,116 @@
+/* 
+  flag dimensions 
+  height: 1
+  width: 1.9
+  union height: 7/13 //  0.5385
+  union width: 0.76 // 2/5ths of the width
+*/
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    border:none;
+}
+
+.flag {
+    width: calc(260px *1.9 + 6px);
+    height: 266px;
+    border: 3px solid black;
+}
+
+  
+  .top {
+    height: calc(260px * 7/13);
+    background: red;
+    display: flex;
+  }
+  
+  .bottom{
+    height: calc(260px * 6/13);;
+    background: red;
+  }
+  
+  .union {
+    background: blue;
+    height: 100%;
+    width: calc(260px * 0.76);
+    padding-top: 9px;
+  }
+
+  .top-stripes {
+    width: calc(260px * 1.17);
+    background: orange;
+  } 
+  
+  
+  .stripe {
+    width: 100%;
+    height: 20px;
+  } 
+  
+  .stripe:nth-child(odd) {
+    background: red;
+  }
+  
+  .stripe:nth-child(even) {
+    background: white;
+  } 
+
+  
+  .bottom > .stripe:nth-child(odd) {
+    background: white;
+  }
+  
+  .bottom > .stripe:nth-child(even) {
+    background: red;
+  }
+  
+  .stars-row {
+    display: flex;
+    justify-content: space-around;
+    height: calc(240px * 7/13 * 1/9);
+  }
+  
+  .stars-row:nth-child(even) {
+    margin: 0 16px;
+  }
+ 
+.star {
+    position: relative;
+    display: block;
+    color: blue;
+    width: 0px;
+    height: 0px;
+    border-right: 10px solid transparent;
+    border-bottom: 7px solid white;
+    border-left: 10px solid transparent;
+    transform: rotate(35deg);
+}
+.star:before {
+    border-bottom: 8px solid white;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -4.5px;
+    left: -6.5px;
+    display: block;
+    content: "";
+    transform: rotate(-35deg);
+}
+.star:after {
+    position: absolute;
+    display: block;
+    color: black;
+    top: 0.3px;
+    left: -10.5px;
+    width: 0px;
+    height: 0px;
+    border-right: 10px solid transparent;
+    border-bottom: 7px solid white;
+    border-left: 10px solid transparent;
+    transform: rotate(-70deg);
+    content: "";
+} 
+
